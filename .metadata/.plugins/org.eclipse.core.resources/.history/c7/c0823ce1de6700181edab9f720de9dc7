@@ -1,0 +1,21 @@
+import java.lang.*; 
+import java.io.*; 
+//
+//package connector;
+
+
+public class connector {
+	public static void main(String args[])throws IOException{ 
+	    Runtime r=Runtime.getRuntime(); 
+	    Process p=null; 
+	    try 
+	    { 
+	      String s="c:\\windowsnotpad.exe"; 
+	      p=r.exec(s); 
+	    } 
+	    catch(Exception e){ 
+	      System.out.println("error==="+e.getMessage()); 
+	      e.printStackTrace(); 
+	    } 
+	  } 
+	} 

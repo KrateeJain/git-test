@@ -1,0 +1,124 @@
+body {
+    background: #dfe3ee;
+}
+header {
+    background-color: #3b5998;
+    padding:0px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+label,.forget-password {
+    color: #ffffff !important;
+}
+
+.forgot-password:hover, .forgot-password:visited {
+    text-decoration: underline;
+    color: white;
+}
+
+.login-form {
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+#login-btn {
+    margin-top: 22px;
+}
+
+#border {
+    padding: 6px 0;
+    border-bottom: 2px solid #ccc;
+}
+
+/*left screen area*/
+#fb-connect-text {
+    font-size: 1.7em;
+    font-weight: 550;
+    word-spacing: 5px;
+    color:#3b5998;
+    letter-spacing: -2px;
+    padding: 20px 10px 20px 10px;
+}
+
+#fb-image {
+       padding: 20px 10px 20px 10px;
+}
+
+/*registration form*/
+
+#create-account-title {
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: -2px;;
+}
+
+#create-account-title + div {
+    margin-top: 3px;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+.common-text-feature {
+  color: #3b5998; 
+}
+
+.checkbox-label {
+    font-size: 1.2em;
+    color:  #3b5998;
+    font-weight: bold;
+}
+
+.common-text-feature:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.terms {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+#celebrity-text {
+    font-size: 1em;
+    font-weight: bold;
+    color: #cccccc;
+    padding-top: 4px;
+}
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+    .label-size {
+        font-size: 0.8em;
+    }
+
+    #create-account-title {
+        font-size: 2em;
+    }
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+    #create-account-title, #create-account-title + div, .logo {
+        text-align: center;
+    }
+    
+
+}

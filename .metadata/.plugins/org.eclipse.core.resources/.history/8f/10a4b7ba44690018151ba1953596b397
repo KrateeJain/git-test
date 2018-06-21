@@ -1,0 +1,62 @@
+package keyloger;
+import java.awt.Component;
+import java.io.*;
+import javax.swing.AbstractButton;
+
+import org.latitudeFintech.MAU.Autoit.AutoItX;
+
+import com.jacob.com.LibraryLoader; 
+
+
+public class Keylogger{ 
+	
+  public static void main(String args[])throws IOException{ 
+		
+    Runtime r=Runtime.getRuntime(); 
+    Process p=null; 
+    try 
+    { 
+      String s="C:\\Users\\Rahul P\\Downloads\\Au3Record\\Au3Record/Au3Record.exe"; 
+      p=r.exec(s); 
+    } 
+    catch(Exception e){ 
+      System.out.println("error==="+e.getMessage()); 
+      e.printStackTrace(); 
+    } 
+    
+       String jacobDllVersionToUse;
+      if (jvmBitVersion().contains("32")) {
+        jacobDllVersionToUse = "C:\\Users\\Rahul P\\Downloads\\jacob-1.18\\jacob-1.18\\jacob-1.18-x86.dll";
+      } else {
+        jacobDllVersionToUse = "C:\\Users\\Rahul P\\Downloads\\jacob-1.18\\jacob-1.18\\jacob-1.18-x64.dll";
+      }
+      
+      File file = new File(jacobDllVersionToUse);
+      System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
+     
+      AutoItX autoIt = new AutoItX();
+      autoIt.mouseClick("left",135,88,1,1);
+      autoIt.mouseClick("left",73,101,1,1);
+      
+      autoIt.mouseClick("left",158,112,1,1);
+      autoIt.mouseClick("left",100,128,1,1);
+      
+      autoIt.mouseClick("left",185,138,1,1);
+      autoIt.mouseClick("left",127,151,1,1);
+      
+      autoIt.mouseClick("left",211,163,1,1);
+      autoIt.mouseClick("left",152,175,1,1);
+      
+      autoIt.mouseClick("left",237,191,1,1);
+      autoIt.mouseClick("left",180,202,1,1);
+      
+      autoIt.mouseClick("left",263,217,1,1);
+      autoIt.mouseClick("left",202,230,1,1);
+      
+      
+  }
+
+public static String jvmBitVersion() {
+        return System.getProperty("sun.arch.data.model");
+    } 
+} 

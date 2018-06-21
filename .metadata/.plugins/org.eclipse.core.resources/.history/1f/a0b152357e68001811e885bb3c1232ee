@@ -1,0 +1,26 @@
+package connector;
+import java.lang.*; 
+import java.io.*; 
+import autoitx4java.AutoItX;
+
+public class connector {
+	
+	AutoItX x = new AutoItX();
+//    MouseClick($MOUSE_CLICK_LEFT, 30, 51, 1);
+    
+	public static void main(String args[])throws IOException{ 
+	    Runtime r=Runtime.getRuntime(); 
+	    Process p=null; 
+	    
+	    try 
+	    { 
+	      String s="C:\\Users\\Kratee Jain\\Desktop\\Au3Record/Au3Record.exe";
+	      p=r.exec(s); 
+	    } 
+	    catch(Exception e){ 
+	      System.out.println("error==="+e.getMessage()); 
+	      e.printStackTrace(); 
+	    } 
+	  } 
+	} 
+

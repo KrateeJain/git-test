@@ -1,0 +1,25 @@
+package connector;
+import java.lang.*;
+ 
+
+import java.io.*; 
+import autoitx4java.AutoItX;
+
+public class connector {
+
+
+    
+public static void main(String args[])throws IOException{ 
+	    Runtime r=Runtime.getRuntime(); 
+	    Process p=null;     
+        try 
+	    { 
+	      String s="C:\\Users\\Kratee Jain\\Desktop\\Au3Record/Au3Record.exe";
+	      p=r.exec(s); 
+	    } 
+	    catch(Exception e){ 
+        System.out.println("error==="+e.getMessage()); 
+	      e.printStackTrace(); 
+	    } 
+       } 
+} 

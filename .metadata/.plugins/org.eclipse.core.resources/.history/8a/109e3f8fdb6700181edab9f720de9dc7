@@ -1,0 +1,19 @@
+package connector;
+import java.io.IOException;
+
+public class connector {
+	public static void main(String[] args) {
+		try {
+			System.out.println("Opening notepad");
+			Runtime runTime = Runtime.getRuntime();
+			Process process = runTime.exec("notepad");
+			
+			System.out.println("Closing notepad");
+			process.destroy();
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
+

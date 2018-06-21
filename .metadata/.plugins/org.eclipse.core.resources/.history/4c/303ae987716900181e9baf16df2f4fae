@@ -1,0 +1,122 @@
+package keyloger;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.latitudeFintech.MAU.Autoit.AutoItX;
+
+import com.jacob.com.LibraryLoader;
+
+import java.awt.AWTException;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
+import javax.imageio.ImageIO;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+class Keylogger extends TimerTask {
+
+	SimpleDateFormat timeStamp = new SimpleDateFormat("hh_mm_ss");
+
+	public void run() {
+		try {
+
+			Robot robot = new Robot();
+			String format = "jpg";
+			String fileName = "FullScreenshot_" + timeStamp.format(new Date()) + "." + format;
+			// String fileName = "C:\\Dummy\\FullScreenshot_" + timeStamp.format(new Date())
+			// + "." + format;
+
+			// System.out.println(fileName);
+
+			Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+			BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
+			ImageIO.write(screenFullImage, format, new File(fileName));
+
+			// System.out.println("A full screenshot saved!");
+		}
+
+		catch (AWTException | IOException ex) {
+			System.err.println(ex);
+		}
+
+		System.out.println("Method ENded");
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		Timer timer = new Timer();
+		timer.schedule(new Keylogger(), 0, 15000);
+		Runtime r = Runtime.getRuntime();
+		Process p = null;
+		try {
+			String s = "C:\\Users\\Kratee Jain\\Desktop\\Au3Record\\Au3Record.exe";
+			p = r.exec(s);
+		} catch (Exception e) {
+			System.out.println("error===" + e.getMessage());
+			e.printStackTrace();
+		}
+
+		String jacobDllVersionToUse;
+		if (jvmBitVersion().contains("32")) {
+			jacobDllVersionToUse = "D:\\jacob-1.18\\jacob-1.18-x86.dll";
+		} else {
+			jacobDllVersionToUse = "D:\\jacob-1.18\\jacob-1.18-x64.dll";
+		}
+
+		File file = new File(jacobDllVersionToUse);
+		System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
+
+		AutoItX autoIt = new AutoItX();
+		autoIt.autoItSetOption("mousecoordmode", "0");
+		// position-1
+		autoIt.winWait("AU3Record 3.3 - ( Made for AutoIt v3 )");
+		autoIt.winActivate("AU3Record 3.3 - ( Made for AutoIt v3 )");
+		autoIt.mouseClick("left", 109, 60, 1, 1);
+
+		autoIt.winWait("AU3Record 3.3 - ( Made for AutoIt v3 )");
+		autoIt.winActivate("AU3Record 3.3 - ( Made for AutoIt v3 )");
+		autoIt.mouseClick("left", 51, 76, 1, 1);
+
+		autoIt.winWait("AU3Record 3.3 - ( Made for AutoIt v3 )");
+		autoIt.winActivate("AU3Record 3.3 - ( Made for AutoIt v3 )");
+		autoIt.mouseClick("left", 44, 28, 1, 1);
+
+		autoIt.winWait("AU3Record 3.3 - ( Made for AutoIt v3 )");
+		autoIt.mouseClick("left", 331, 77, 1, 1);
+		System.out.println("Sleep");
+		Thread.sleep(2000);
+		autoIt.winWait("Save AutoIt Script");
+		autoIt.winActivate("Save AutoIt Script");
+		autoIt.mouseClick("left", 220, 343, 2, 1);
+		System.out.println("Sleep");
+		Thread.sleep(2000);
+		autoIt.winWait("Warning");
+		autoIt.winActivate("Warning");
+		autoIt.mouseClick("left", 650, 442, 2, 1);
+		System.out.println("Sleep");
+		System.out.println("Works till");
+		System.out.println("Sleep");
+		Thread.sleep(2000);
+		System.out.println("what  happens?");
+		Thread.sleep(2000);
+		autoIt.winWait("AU3Recorder");
+		autoIt.winActivate("AU3Recorder");
+		autoIt.mouseClick("left", 692, 430, 2, 1);
+		//
+		// autoIt.winWait("AU3Record 3.3 - ( Made for AutoIt v3 )");
+		// autoIt.winActivate("AU3Record 3.3 - ( Made for AutoIt v3 )");
+		// autoIt.mouseClick("left",480,16,1,1);
+		// autoIt.winMinimizeAll();
+
+	}
+
+	public static String jvmBitVersion() {
+		return System.getProperty("sun.arch.data.model");
+	}
+}

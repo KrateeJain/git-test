@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Facebook log in or sign up</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script> 
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/styles.css">
+    </head>
+    <body>
+    <header>
+      <div class="container">
+        <div class="col-sm-7">
+          <div class="logo">facebook</div>
+        </div>
+        <div class="col-sm-5">
+          <div class="row">
+            <form class="login-form">
+              <div class="col-sm-5">
+                <div class="form-group">
+                  <label for="email" class="label-size">Email or Phone</label>
+                  <input type="email" name="email" id="email" class="form-control input-sm" >
+                </div>
+                <div class="checkbox">
+                  <label class="label-size">
+                    <input type="checkbox"> keep me logged in
+                  </label>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="form-group">
+                  <label for="password" class="label-size">Password</label>
+                  <input type="password" name="password" id="password" class="form-control input-sm">
+                  <a href="#" class="forget-password label-size">Forgot your password?</a>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="form-group">
+                  <button type="button" class="btn btn-default btn-sm" id="login-btn">Log In</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7 hidden-xs">
+            <div id="fb-connect-text">Facebook helps you connect and share with the people in your life.</div>
+            <div id="fb-image">
+                <img class="img-responsive" 
+                  src="images/GwFs3_KxNjS.png" 
+                  alt="facebook-map">
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <h1 id="create-account-title">Create an account</h1>
+            <div>It's free and always will be.</div>
+            <form>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First name">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last name">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                </div>     
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input type="email" name="confirmemail" class="form-control" id="confirmemail" placeholder="Re-enter Email">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input type="date" name="date" class="form-control" id="data" placeholder="mm/dd/yyyy">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <span class="common-text-feature label-size">Why do I need to provide my birthday?</span>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label class="checkbox-inline checkbox-label">
+                    <input type="checkbox" id="female" value="female"> Female
+                  </label>
+                  <label class="checkbox-inline checkbox-label">
+                    <input type="checkbox" id="male" value="male"> Male
+                  </label>
+                </div>
+              </div>
+              <div class="col-sm-12 terms">
+                <span class="">By clicking Create an account, you agree to our 
+                  <span class="common-text-feature">Terms</span> and that you have read our 
+                  <span class="common-text-feature">Data Policy</span>, Including our 
+                  <span class="common-text-feature">Cookie Use</span>
+                </span>
+              </div>
+              <div class="col-sm-12">
+                <button class="btn btn-success">Create an account</button>
+                <div id="border"></div>
+                <div id="celebrity-text"><span class="common-text-feature">Create a Page</span> for a celebrity, band or business.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </body>
+</html>
